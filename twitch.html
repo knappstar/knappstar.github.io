@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Knappstar</title>
+	<link rel="shortcut icon" href="favicon.ico" />
+	
+	<style>
+ html, body, .container {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translate(-50%, -50%);
+}
+
+</style>
+
+<style>
+
+	@font-face {
+       font-family: Makinas-Scrap-5;
+       src: url(f/Makinas-Scrap-5.otf);
+		 }
+	  div {
+       font-family: Makinas-Scrap-5;
+	  }
+		tr {
+		 font-family: Makinas-Scrap-5;
+		}	
+
+</style>
+	
+</head>
+
+<body style="background: #484c52; background: -webkit-linear-gradient(#484c52, #303133); background:    -moz-linear-gradient(#484c52, #303133); background:         linear-gradient(#484c52, #303133); background-repeat: no-repeat">
+
+<div style="color:#58d6bd;">
+<center>
+ 
+<table>
+ <tr><td colspan="2"><center> <br/> <img src="img/bisob.png"> <a href="https://twitch.tv/bisob" target="blank"><img src="img/bisobontwitch.png"></a> <br/></center></td></tr>
+ <tr> <td width="856" style="text-align:right"> <div id="twitch-embed"></div> </td> <td>&nbsp;</td> <td style="text-align:left">Get the <a href="https://www.frankerfacez.com/">FrankerFaceZ</a> plugin for your browser<br />and enjoy a wider range of emotes! <br /><br /> Chat Commands:<br /><br />Get a quote with !quote<br /><br />Add a quote with !addquote "quotehere" (mods only)<br /><br />Get a list of sfx to play with !sfx<br /><br />Link to the soundboard with !soundboard<br /><br />Start a new poll with !poll<br /><br />Get some important links with !links<br /><br />Bored? Try !imbored </td> </tr>
+ <tr><td colspan="2"><center> <br/> <img src="img/bisob.png"> <a href="https://goo.gl/vyaCLt" target="blank"><img src="img/bisobonyt.png"></a> </center></td></tr>
+</table>
+
+</center>
+</div>
+
+  <!-- Load the Twitch embed script -->
+    <script src="https://embed.twitch.tv/embed/v1.js"></script>
+
+    <!-- Create a Twitch.Embed object that will render within the "twitch-embed" root element. -->
+    <script type="text/javascript">
+      new Twitch.Embed("twitch-embed", {
+        width: 854,
+        height: 480,
+        channel: "bisob",
+      });
+    </script>  
+
+</body>
+</html>
