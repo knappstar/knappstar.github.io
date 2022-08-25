@@ -20,25 +20,6 @@ body {
   font-size: 10px;
 }
 
-.kchan span {
-  position: absolute;
-  bottom: -1rem;
-  left: 0;
-  right: 0;
-  color: white;
-  text-align: center;
-  font-size: 0.9rem;
-}
-
-.kchan {
-  width: 301px;
-  height: 749px;
-  background-image: url(img/kchank.png);
-  background-size: cover;
-  margin-bottom: 2rem;
-  margin-right: 1rem;
-}
-
 .logo span {
   position: absolute;
   bottom: -1rem;
@@ -50,8 +31,8 @@ body {
 }
 
 .logo {
-  width: 539px;
-  height: 128px;
+  width: 624px;
+  height: 195px;
   background-image: url(img/knappstar_logo.png);
   background-size: cover;
   margin-bottom: 2rem;
@@ -104,6 +85,10 @@ body {
 a {
   text-decoration: none;
 }
+
+canvas {
+  background-color: #2a2922; }
+  
 </style>
 
 <style>
@@ -122,11 +107,7 @@ a {
 </style>
 
 <style>
- #Behind{
-    position: absolute;
-    z-index: -1;
-    padding:0px;
-   }
+
   #TopOne{ 
     position: absolute;
     padding:0px; 
@@ -135,9 +116,13 @@ a {
 	
 </head>
 
-<body style="background: #484c52; background: -webkit-linear-gradient(#484c52, #303133); background:    -moz-linear-gradient(#484c52, #303133); background:         linear-gradient(#484c52, #303133); background-repeat: no-repeat">
+<body style="background: #2a2922; background: -webkit-linear-gradient(#2a2922, #39372d); background:    -moz-linear-gradient(#2a2922, #39372d); background:         linear-gradient(#2a2922, #39372d); background-repeat: no-repeat">
 
-<div id="Behind" class="kchan float-ease-in-out">  </div><div id="TopOne" class="logo float-ease">  </div>
+    <canvas id="particlesField">This Browser is not supported</canvas>
+    <script src="index.js"></script>        
+    <!--  https://github.com/nikitindiz/particles-animation/commit/d97a52ba68ec9f8106b53c422c23cd856495f2f7 -->
+
+<div id="TopOne" class="logo float-ease">  </div>
 
 
 </body>

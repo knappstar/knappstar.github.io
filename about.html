@@ -5,147 +5,56 @@
     <title>Knappstar</title>
 	<link rel="shortcut icon" href="favicon.ico" />
 	
-	<style>
-body {
-  height: 100vh;
-  margin: 0;
-  font: 400 10px Lato, sans-serif;
-  background-color: black;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  vertical-align: middle;
-  align-items: center;
-  justify-content: center;
-  font-size: 10px;
-}
-
-.kchan span {
-  position: absolute;
-  bottom: -1rem;
-  left: 0;
-  right: 0;
-  color: white;
-  text-align: center;
-  font-size: 0.9rem;
-}
-
-.kchan {
-  width: 301px;
-  height: 749px;
-  background-image: url(img/kchank.png);
-  background-size: cover;
-  margin-bottom: 2rem;
-  margin-right: 1rem;
-}
-
-.logo span {
-  position: absolute;
-  bottom: -1rem;
-  left: 0;
-  right: 0;
-  color: white;
-  text-align: center;
-  font-size: 0.9rem;
-}
-
-.logo {
-  width: 539px;
-  height: 128px;
-  background-image: url(img/knappstar_logo.png);
-  background-size: cover;
-  margin-bottom: 2rem;
-  margin-right: 1rem;
-}
-
-.float-ease {
-  animation: float 4s infinite ease;
-}
-
-.float-ease-in {
-  animation: float 2s infinite ease-in;
-}
-
-.float-ease-in-out {
-  animation: float 5s infinite ease-in-out;
-}
-
-.float-ease-out {
-  animation: float 2s infinite ease-out;
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(0);
-    -webkit-transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(1rem);
-    -webkit-transform: translateY(1rem);
-  }
-
-  100% {
-    transform: translateY(0);
-    -webkit-transform: translateY(0);
-  }
-}
-
-.go-back {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  color: white;
-  font: 400 3rem monospace;
-  padding: 0.5rem 1rem;
-  opacity: 0.2;
-}
-
-a {
-  text-decoration: none;
-}
-</style>
-
 <style>
 
 	@font-face {
-       font-family: Makinas-Scrap-5;
-       src: url(f/Makinas-Scrap-5.otf);
+       font-family: Bahnschrift; sans-serif;
+       src: url('f/bahnschrift.ttf');
 		 }
 	  div {
-       font-family: Makinas-Scrap-5;
+       font-family: Bahnschrift; sans-serif;
 	  }
 		tr {
-		 font-family: Makinas-Scrap-5;
+		 font-family: Bahnschrift; sans-serif;
 		}	
 
 </style>
 
 <style>
- #Behind{
-    position: absolute;
-    z-index: -1;
-    padding:0px;
-   }
-  #TopOne{ 
-    position: absolute;
-    padding:0px; 
-    }
+/* (A) FULL SCREEN BACKGROUND */
+#overA {
+  position: fixed; top: 0; left: 0; z-index: 1;
+  width: 100vw; height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+}
+#overB {
+  position: absolute; top: 50%; left: 50%;
+  z-index: 2;
+  /* "COUNTER" WIDTH & HEIGHT OF BOX TO "TRULY CENTER" ON SCREEN */
+  transform: translate(-50%, -50%);
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
 </style>
 	
 </head>
 
-<body style="background: #484c52; background: -webkit-linear-gradient(#484c52, #303133); background:    -moz-linear-gradient(#484c52, #303133); background:         linear-gradient(#484c52, #303133); background-repeat: no-repeat">
+<body style="background: #2a2922; background: -webkit-linear-gradient(#2a2922, #39372d); background:    -moz-linear-gradient(#2a2922, #39372d); background:         linear-gradient(#2a2922, #39372d); background-repeat: no-repeat">
 
-<div id="Behind" class="kchan float-ease-in-out">  </div>
+<div id="overA">
 
-<div id="TopOne" style="color:#ff910a; font-size:large;"> 
+<canvas id="particlesField">This Browser is not supported</canvas>
+    <script src="index.js"></script>        
+    <!--  https://github.com/nikitindiz/particles-animation/commit/d97a52ba68ec9f8106b53c422c23cd856495f2f7 -->
+
+</div>
+<div id="overB" style="color:#ff910a; font-size:large;"> 
 <h1>About Us</h1>
-<h3>We're tinkerers! We're Gamers! <br/><br/> We're a small setup, specialising in games. Our base is in Stoke - on - Trent, England and are planning to take over the world with our amazing endeavours and ideas. <br/>Kei-chan (Kchan) mascot provided by <a href="https://charat.me/en/genesis/create/">&copy; CHARAT 2020</a>
+<h3>We're tinkerers! We're Gamers! <br/><br/> We're a small setup, specialising in games. Our base is in Stoke - on - Trent, England and are planning to take over the world with our amazing endeavours and ideas.</a>
 
 </h3>
 </div>
-
 
 </body>
 </html>

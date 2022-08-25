@@ -24,28 +24,55 @@
   transform: translate(-50%, -50%);
 }
 
+canvas {
+  background-color: #2a2922; }
+  
 </style>
 
 <style>
 
 	@font-face {
-       font-family: Makinas-Scrap-5;
-       src: url(f/Makinas-Scrap-5.otf);
+       font-family: Bahnschrift; sans-serif;
+       src: url('f/bahnschrift.ttf');
 		 }
 	  div {
-       font-family: Makinas-Scrap-5;
+       font-family: Bahnschrift; sans-serif;
 	  }
 		tr {
-		 font-family: Makinas-Scrap-5;
+		 font-family: Bahnschrift; sans-serif;
 		}	
 
 </style>
-	
+
+<style>
+/* (A) FULL SCREEN BACKGROUND */
+#overA {
+  position: fixed; top: 0; left: 0; z-index: 999;
+  width: 100vw; height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+}
+/* (B) CENTERED ON SCREEN */
+#overB {
+  position: absolute; top: 50%; left: 50%;
+  /* "COUNTER" WIDTH & HEIGHT OF BOX TO "TRULY CENTER" ON SCREEN */
+  transform: translate(-50%, -50%);
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+</style>
+
 </head>
 
-<body style="background: #484c52; background: -webkit-linear-gradient(#484c52, #303133); background:    -moz-linear-gradient(#484c52, #303133); background:         linear-gradient(#484c52, #303133); background-repeat: no-repeat">
+<body style="background: #484c52; background: -webkit-linear-gradient(#303133, #2a2922); background:    -moz-linear-gradient(#303133, #2a2922); background:         linear-gradient(#303133, #2a2922); background-repeat: no-repeat">
 
-<div style="color:#fffb14;">
+<div id="overA" style="color:#9a957e;">
+
+<canvas id="particlesField">This Browser is not supported</canvas>
+    <script src="index.js"></script>        
+    <!--  https://github.com/nikitindiz/particles-animation/commit/d97a52ba68ec9f8106b53c422c23cd856495f2f7 -->
+
+<div id="overB" style="color:#9a957e;">
 <center> 
 
 	<h1>Current Projects</h1>
@@ -91,7 +118,11 @@
 </table>
 
 </center>
+</div>	
+
 </div>
+
+
 
 </body>
 </html>
