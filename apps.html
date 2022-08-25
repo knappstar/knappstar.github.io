@@ -47,18 +47,16 @@ canvas {
 <style>
 /* (A) FULL SCREEN BACKGROUND */
 #overA {
-  position: fixed; top: 0; left: 0; z-index: 999;
+  position: fixed; top: 0; left: 0; z-index: 1;
   width: 100vw; height: 100vh;
   background: rgba(0, 0, 0, 0.5);
 }
-/* (B) CENTERED ON SCREEN */
 #overB {
-  position: absolute; top: 50%; left: 50%;
-  /* "COUNTER" WIDTH & HEIGHT OF BOX TO "TRULY CENTER" ON SCREEN */
-  transform: translate(-50%, -50%);
-  color: #fff;
-  padding: 10px;
-  text-align: center;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 100vw; height: 100vh;
+  z-index: 2;
 }
 </style>
 
