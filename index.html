@@ -1,45 +1,53 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <title>Knappstar</title>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Knappstar</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/sidebar.css">
+	<link rel="shortcut icon" href="favicon.ico" />
+</head>
 
+<body>
 
-<style>
- html, body, .container {
-  height: 100%;
-  width: 100%;
-  position: relative;
-  margin:0;
-  padding:0;
-  text-align:center;
-  overflow:hidden;
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  <a href="about.html" target="wframe">&#x2022; About</a>
+  <a href="apps.html" target="wframe">&#x2022; Apps</a>
+  <a href="mods.html" target="wframe">&#x2022; Game Mods</a>
+  <a href="fun.html" target="wframe">&#x2022; Fun</a>
+  <a href="twitch.html" target="wframe">&#x2022; Twitch &#38;<br/>YouTube</a>
+  <a href="https://dnd.knappstar.com/" target="wframe">&#x2022; D&#38;D</a>
+  <a href="https://photo.knappstar.com/" target="wframe">&#x2022; Photography</a>
+  <a href="https://illust.knappstar.com/" target="wframe">&#x2022; Illustration</a>
+  <a href="cs.html" target="wframe">&#x2022; Services</a>
+</div>
+
+<div id="main">
+  <table>
+	<tr>
+	  <td><button class="openbtn" onclick="openNav()">☰</button></td> <td> &nbsp; </td> <td> <a href="index.html"><img src="img/knappstar_logo.png" width="270" height="65"></a> </td>
+	</tr>
+	<tr> <td> <br/> </td> </tr>
+  </table>
+	<iframe id="wframe" name="wframe" scrolling="yes" marginwidth=0 marginheight=0 frameborder=0 width="100%" style="height: calc(100% - 120px);" src="about.html"></iframe>
+	&copy; Knappstar Media Group 2011-2023
+</div>
+
+<script>
+/* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
 }
 
-
-iframe { display:block; }
-
-	@font-face {
-       font-family: Makinas-Scrap-5;
-       src: url(f/Makinas-Scrap-5.otf);
-		 }
-	  div {
-       font-family: Makinas-Scrap-5;
-	  }
-		tr {
-		 font-family: Makinas-Scrap-5;
-		}	
-
-</style>
-  
- <head>
-  
-<body height="100%" width="100%" style="background: #484c52; background: -webkit-linear-gradient(#484c52, #303133); background:    -moz-linear-gradient(#484c52, #303133); background:         linear-gradient(#484c52, #303133); background-repeat: no-repeat">
-
-<div style="height: 100%; overflow: hidden; color:#FFFFFF;">
-    <iframe id="mframe" name="mframe" scrolling="no" frameborder="0" width="100%" height="90" src="top.html"></iframe>
-    <iframe id="wframe" name="wframe" scrolling="yes" marginwidth=0 marginheight=0 frameborder=0 width="100%" style="height: calc(100% - 120px);" src="landing.html"></iframe>
-	&copy; Knappstar Media Group 2011-2022
-</div>	
+/* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft = "0";
+} 
+</script>
 
 </body>
 </html>
+
