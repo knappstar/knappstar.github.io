@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KNAPPSTAR English! | 初心者向け英会話</title>
+  <meta name="description" content="子供から大人まで楽しめる、楽しくフレンドリーな初心者向け英語教室。リラックスした雰囲気の中で、実践的な英語を学びましょう。" />
+  <style>
+    :root{
+      --ink:#171717;
+      --cream:#fff7df;
+      --pink:#ff4fb3;
+      --yellow:#ffe44d;
+      --cyan:#48dfff;
+      --purple:#8c5cff;
+      --green:#68f28b;
+      --orange:#ff8a3d;
+      --white:#ffffff;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 10% 12%, rgba(255,79,179,.24) 0 70px, transparent 72px),
+        radial-gradient(circle at 92% 20%, rgba(72,223,255,.24) 0 90px, transparent 92px),
+        var(--cream);
+      font-family: "Trebuchet MS", Arial, sans-serif;
+      overflow-x:hidden;
+    }
+
+    a{color:inherit}
+    .page{
+      min-height:100vh;
+      position:relative;
+      isolation:isolate;
+    }
+
+    .squiggle,
+    .dot,
+    .triangle,
+    .ring{
+      position:absolute;
+      z-index:-1;
+      pointer-events:none;
+    }
+
+    .dot{
+      width:18px;height:18px;border-radius:50%;
+      background:var(--pink);
+      box-shadow: 36px 10px 0 var(--cyan), 72px -2px 0 var(--yellow);
+      top:110px;left:5vw;
+    }
+
+    .triangle{
+      width:0;height:0;
+      border-left:34px solid transparent;
+      border-right:34px solid transparent;
+      border-bottom:58px solid var(--green);
+      transform:rotate(18deg);
+      top:520px;right:4vw;
+      filter:drop-shadow(5px 5px 0 var(--ink));
+    }
+
+    .ring{
+      width:70px;height:70px;border:12px solid var(--purple);
+      border-radius:50%;
+      top:780px;left:3vw;
+      transform:rotate(-12deg);
+    }
+
+    .squiggle{
+      width:170px;height:35px;
+      border-top:10px solid var(--orange);
+      border-radius:50%;
+      top:330px;right:6vw;
+      transform:rotate(-18deg);
+    }
+
+    .wrap{
+      width:min(1120px, calc(100% - 36px));
+      margin:auto;
+    }
+
+    header{
+      padding:22px 0 10px;
+    }
+
+    nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      background:var(--white);
+      border:4px solid var(--ink);
+      box-shadow:7px 7px 0 var(--ink);
+      padding:12px 16px;
+      transform:rotate(-.4deg);
+    }
+
+    .logo{
+      font-weight:1000;
+      font-size:clamp(1.25rem, 2.5vw, 1.8rem);
+      letter-spacing:-1px;
+    }
+
+    .logo span{
+      background:var(--yellow);
+      padding:2px 7px;
+      border:2px solid var(--ink);
+      display:inline-block;
+      transform:rotate(-3deg);
+    }
+
+    .navlinks{
+      display:flex;
+      gap:18px;
+      align-items:center;
+      font-weight:800;
+    }
+
+    .navlinks a{
+      text-decoration:none;
+    }
+
+    .navlinks a:hover{
+      text-decoration:underline;
+      text-decoration-thickness:3px;
+      text-underline-offset:4px;
+    }
+
+    .mini-cta{
+      background:var(--cyan);
+      border:3px solid var(--ink);
+      padding:9px 13px;
+      box-shadow:4px 4px 0 var(--ink);
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:44px;
+      align-items:center;
+      padding:80px 0 65px;
+    }
+
+    .eyebrow{
+      display:inline-block;
+      background:var(--green);
+      border:3px solid var(--ink);
+      box-shadow:4px 4px 0 var(--ink);
+      padding:7px 12px;
+      font-size:.95rem;
+      font-weight:1000;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      transform:rotate(-2deg);
+      margin-bottom:20px;
+    }
+
+    h1{
+      font-family: Impact, Haettenschweiler, "Arial Black", sans-serif;
+      font-size:clamp(4.6rem, 11vw, 9.4rem);
+      line-height:.82;
+      letter-spacing:-5px;
+      margin:0 0 28px;
+      text-transform:uppercase;
+      text-shadow:7px 7px 0 var(--white);
+    }
+
+    h1 .pink{color:var(--pink)}
+    h1 .purple{color:var(--purple)}
+
+    .hero p{
+      font-size:clamp(1.1rem, 2vw, 1.35rem);
+      line-height:1.55;
+      max-width:650px;
+      font-weight:700;
+    }
+
+    .actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:16px;
+      margin-top:30px;
+    }
+
+    .btn{
+      display:inline-block;
+      text-decoration:none;
+      font-weight:1000;
+      font-size:1.05rem;
+      padding:15px 20px;
+      border:4px solid var(--ink);
+      box-shadow:6px 6px 0 var(--ink);
+      transition:.15s ease;
+    }
+
+    .btn:hover{
+      transform:translate(3px,3px);
+      box-shadow:3px 3px 0 var(--ink);
+    }
+
+    .btn.primary{background:var(--yellow)}
+    .btn.secondary{background:var(--white)}
+
+    .hero-card{
+      background:var(--cyan);
+      border:5px solid var(--ink);
+      box-shadow:13px 13px 0 var(--ink);
+      padding:26px;
+      transform:rotate(2deg);
+      position:relative;
+    }
+
+    .hero-card:before{
+      content:"WOW!";
+      position:absolute;
+      right:-22px;
+      top:-28px;
+      background:var(--pink);
+      color:var(--white);
+      border:4px solid var(--ink);
+      border-radius:50%;
+      width:86px;height:86px;
+      display:grid;
+      place-items:center;
+      font-weight:1000;
+      font-size:1.2rem;
+      transform:rotate(12deg);
+      box-shadow:5px 5px 0 var(--ink);
+    }
+
+    .cassette{
+      background:#f5f5f5;
+      border:5px solid var(--ink);
+      border-radius:14px;
+      padding:24px 18px 20px;
+      min-height:250px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+
+    .cassette-top{
+      background:var(--pink);
+      border:4px solid var(--ink);
+      padding:12px;
+      font-weight:1000;
+      text-align:center;
+      letter-spacing:1px;
+    }
+
+    .tape-window{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:26px;
+      background:var(--cream);
+      border:4px solid var(--ink);
+      padding:18px;
+      margin:18px 10px;
+    }
+
+    .reel{
+      width:62px;height:62px;
+      border-radius:50%;
+      border:9px dotted var(--ink);
+      background:var(--yellow);
+    }
+
+    .tape-line{
+      height:8px;
+      width:55px;
+      background:var(--ink);
+    }
+
+    .cassette-label{
+      text-align:center;
+      font-weight:1000;
+      font-size:1.15rem;
+    }
+
+    .section{
+      padding:70px 0;
+    }
+
+    .section-title{
+      font-family: Impact, Haettenschweiler, "Arial Black", sans-serif;
+      font-size:clamp(3rem, 7vw, 5.8rem);
+      line-height:.9;
+      margin:0 0 22px;
+      text-transform:uppercase;
+      letter-spacing:-2px;
+    }
+
+    .section-intro{
+      max-width:760px;
+      font-size:1.12rem;
+      line-height:1.7;
+      font-weight:700;
+      margin-bottom:34px;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:24px;
+    }
+
+    .card{
+      border:4px solid var(--ink);
+      box-shadow:8px 8px 0 var(--ink);
+      padding:24px;
+      background:var(--white);
+    }
+
+    .card:nth-child(1){background:var(--yellow); transform:rotate(-1deg)}
+    .card:nth-child(2){background:var(--pink); transform:rotate(1deg)}
+    .card:nth-child(3){background:var(--green); transform:rotate(-.5deg)}
+
+    .icon{
+      width:62px;height:62px;
+      border:4px solid var(--ink);
+      background:var(--white);
+      display:grid;
+      place-items:center;
+      font-size:2rem;
+      margin-bottom:20px;
+      box-shadow:4px 4px 0 var(--ink);
+      transform:rotate(-4deg);
+    }
+
+    .card h3{
+      margin:0 0 10px;
+      font-size:1.5rem;
+      font-weight:1000;
+    }
+
+    .card p{
+      margin:0;
+      line-height:1.6;
+      font-weight:700;
+    }
+
+    .marquee{
+      overflow:hidden;
+      background:var(--purple);
+      border-block:4px solid var(--ink);
+      color:white;
+      transform:rotate(-1deg) scale(1.02);
+      margin:30px 0 20px;
+    }
+
+    .marquee-track{
+      display:flex;
+      width:max-content;
+      gap:30px;
+      padding-left:95%;
+      font-weight:1000;
+      font-size:1.15rem;
+      text-transform:uppercase;
+      animation:scroll 18s linear infinite;
+    }
+
+    @keyframes scroll{
+      from { transform: translateX(0); }
+      to   { transform: translateX(-100%); }
+    }
+
+    .how{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:24px;
+    }
+
+    .step{
+      display:flex;
+      gap:18px;
+      align-items:flex-start;
+      background:white;
+      border:4px solid var(--ink);
+      padding:22px;
+      box-shadow:7px 7px 0 var(--ink);
+    }
+
+    .number{
+      flex:0 0 52px;
+      width:52px;height:52px;
+      display:grid;
+      place-items:center;
+      background:var(--orange);
+      border:3px solid var(--ink);
+      font-weight:1000;
+      font-size:1.35rem;
+      border-radius:50%;
+    }
+
+    .step h3{margin:1px 0 6px;font-size:1.35rem}
+    .step p{margin:0;line-height:1.6;font-weight:700}
+
+    .cta-panel{
+      background:var(--yellow);
+      border:5px solid var(--ink);
+      box-shadow:12px 12px 0 var(--ink);
+      padding:clamp(28px, 5vw, 55px);
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:30px;
+      align-items:center;
+      transform:rotate(.4deg);
+      justify-content: center;
+    }
+
+    .cta-panel h2{
+      font-family:Impact, Haettenschweiler, "Arial Black", sans-serif;
+      font-size:clamp(2.7rem,6vw,5rem);
+      line-height:.9;
+      margin:0 0 15px;
+      text-transform:uppercase;
+      letter-spacing:-2px;
+    }
+
+    .cta-panel p{
+      font-size:1.12rem;
+      line-height:1.6;
+      font-weight:800;
+      margin:0;
+    }
+
+    .email-box{
+      background:var(--white);
+      border:4px solid var(--ink);
+      box-shadow:6px 6px 0 var(--ink);
+      padding:18px 22px;
+      text-align:center;
+      font-weight:1000;
+      word-break:break-word;
+    }
+
+    footer{
+      padding:46px 0 55px;
+      text-align:center;
+      font-weight:800;
+    }
+
+    .tiny{
+      font-size:.9rem;
+      opacity:.75;
+      margin-top:8px;
+    }
+
+    @media (max-width: 820px){
+      .hero{grid-template-columns:1fr; padding-top:55px}
+      .hero-card{max-width:520px}
+      .cards{grid-template-columns:1fr}
+      .how{grid-template-columns:1fr}
+      .cta-panel{grid-template-columns:1fr}
+      .navlinks a:not(.mini-cta){display:none}
+      h1{letter-spacing:-3px}
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      *{scroll-behavior:auto}
+      .marquee-track{animation:none}
+      .btn{transition:none}
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="dot"></div>
+    <div class="triangle"></div>
+    <div class="ring"></div>
+    <div class="squiggle"></div>
+
+    <header class="wrap">
+      <nav aria-label="Main navigation">
+        <div class="logo"><span>KNAPPSTAR</span> ENGLISH</div>
+        <div class="navlinks">
+          <a href="#classes">クラス</a>
+          <a href="#how">学び方</a>
+          <a href="#contact" class="mini-cta">お問合せ</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero wrap">
+        <div>
+          <div class="eyebrow">初心者歓迎！　 楽しく、安心して学べます</div>
+          <h1>
+            英語を<br>
+            <span class="pink">楽しく.</span><br>
+            <span class="purple">話そう!</span>
+          </h1>
+          <p>
+            ✩★　英語を学びたい人、集合　★✩
+          </p>
+          <div class="actions">
+            <a class="btn primary" href="mailto:english@knappstar.com">クラスに参加する</a>
+            <a class="btn secondary" href="#classes">何を学ぶ？</a>
+          </div>
+        </div>
+
+        <div class="hero-card" aria-label="Decorative cassette graphic">
+          <div class="cassette">
+            <div class="cassette-top">BEGINNER ENGLISH MIX</div>
+            <div class="tape-window">
+              <div class="reel"></div>
+              <div class="tape-line"></div>
+              <div class="reel"></div>
+            </div>
+            <div class="cassette-label">PLAY • PRACTICE • SPEAK</div>
+          </div>
+        </div>
+      </section>
+
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>★ 使える英語</span><span>★ 楽しいレッスン</span><span>★ 初心者大歓迎</span><span>★ 自信をつけよう</span><span>★ 使える英語</span><span>★ 楽しいレッスン</span><span>★ 初心者大歓迎</span><span>★ 自信をつけよう</span>
+        </div>
+      </div>
+
+      <section id="classes" class="section wrap">
+        <h2 class="section-title">目的に合わせたレッスン</h2>
+        <p class="section-intro">
+         間違えても大丈夫。リラックスした雰囲気の中で、たくさん話す練習をし、少しずつ「話せる自信」を身につけます。
+        </p>
+
+        <div class="cards">
+          <article class="card">
+            <div class="icon">💬</div>
+            <h3>初級編</h3>
+            <p>あいさつ、自己紹介、ちょっとした会話、質問など、すぐに使える表現を練習します。</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">🛍️</div>
+            <h3>中級編</h3>
+            <p>ショッピング、カフェ、予約など、実際の生活や旅行先で使える英語を楽しく学びます。</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">⚡</div>
+            <h3>上級編</h3>
+            <p>ビジネスのシーンで役立つ表現・言い回しを学んだり、先生が普段話す【実際のスピード】で日常会話を楽しめるような練習をしたり、先生と世の中のトピックについて話し合ったりしてみましょう！</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="how" class="section wrap">
+        <h2 class="section-title">クラスについて</h2>
+        <p class="section-intro">
+          ご自宅に伺うことも可能です！（距離によっては交通費をいただきます。要問合せ）
+        </p>
+
+        <div class="how">
+          <div class="step">
+            <div class="number">1</div>
+            <div>
+              <h3>参加可能年齢</h3>
+              <p>６歳（小学１年生）以上。１クラス最大４名まで。</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="number">2</div>
+            <div>
+              <h3>対応可能時間</h3>
+              <p>13:00〜15:45 ＊夜間も対応いたします。その他の時間に関してはご相談ください。オンラインレッスンも可能です。</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="number">3</div>
+            <div>
+              <h3>完全予約制</h3>
+              <p>予約方法は下記をご確認ください。当日予約OK!無料キャンセルは授業の前日２０時までです。</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="number">4</div>
+            <div>
+              <h3>料金</h3>
+              <p>下記からお問い合わせください。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section wrap">
+        <div class="cta-panel">
+          <div>
+            <h2>PLAYボタンを押そう！</h2>
+            <p>英会話クラスについて、まずは気軽にお問い合わせください。</p>
+          </div> <br>
+                                <p>LINE</p>  <a class="email-box" href="https://lin.ee/ve11hlt"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" height="40" border="0"></a>
+          <p>メール</p> <a class="email-box" href="mailto:english@knappstar.com">english@knappstar.com</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="wrap">
+      <div>Knappstar ENGLISH — 初心者向け・楽しい英会話クラス</div>
+      <div class="tiny">✦ &copy;Knappstar.com 2026 ✦</div>
+    </footer>
+  </div>
+</body>
+</html>
